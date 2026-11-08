@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "playbook.compiler"
+version = "0.1.0"
+description = "Turn markdown orchestration playbooks into structured data, lint them for owners, versions, numbering, and checklists, and track progress. Dependency-free Python."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "AndMaverick LLC" }]
+
+[tool.setuptools.packages.find]
+include = ["playbook_compiler*"]
