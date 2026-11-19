@@ -4,8 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "playbook.compiler"
-version = "0.1.0"
-description = "Turn markdown orchestration playbooks into structured data, lint them for owners, versions, numbering, and checklists, and track progress. Dependency-free Python."
+version = "0.2.0"
+description = "Treat an operating playbook as something that can be checked: markdown to typed steps and tasks with line numbers, governance lint (owners, approvals, rollback), staleness, progress and ready work, safe checkbox edits, export as a plan. Dependency-free Python."
+classifiers = ["Typing :: Typed", "Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License"]
+keywords = ["playbook", "runbook", "governance", "markdown", "llm", "operations"]
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -13,3 +15,21 @@ authors = [{ name = "AndMaverick LLC" }]
 
 [tool.setuptools.packages.find]
 include = ["playbook_compiler*"]
+
+[tool.setuptools.package-data]
+playbook_compiler = ["py.typed"]
+
+[project.scripts]
+playbook-compiler = "playbook_compiler.cli:main"
+
+[tool.ruff]
+line-length = 130
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+strict = true
+files = ["playbook_compiler"]
