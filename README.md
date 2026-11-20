@@ -95,6 +95,8 @@ The original API (`parse`, `lint`, `progress` on plain dicts) is unchanged, and 
 python -m unittest discover -s tests -t . -v
 ```
 
+**Related repositories:** [orchestra.dsl](https://github.com/AndMaverick/orchestra.dsl) checks the plan a playbook exports. [mao-framework](https://github.com/AndMaverick/mao-framework) has a smaller module, `mao.playbook`, that compiles markdown runbooks into plans and audits their approval gates against the policy that will run.
+
 MIT licensed. Built by [AndMaverick LLC](https://www.andmaverick.com).
 
 ---
